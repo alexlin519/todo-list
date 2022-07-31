@@ -146,7 +146,7 @@ const controller = {
     */
     createItem: function() {
         const createItemInput = document.getElementById('create-item-input');
-        model.countItems(createItemInput.value);
+        model.createItem(createItemInput.value);
         createItemInput.value = '';
         view.displayTodoItems();
     },
@@ -370,8 +370,8 @@ const view = {
             //above, we create all obj but not yet pass to view to show in the web page
             itemLi.appendChild(toggleItemCheckbox)
             itemLi.appendChild(itemLabel)
-            itemLi.appendChild(updateItemInput)
             itemLi.appendChild(deleteItemButton)
+            itemLi.appendChild(updateItemInput)
             todoListUl.insertBefore(itemLi, todoListUl.childNodes[0])
 
         })
@@ -385,10 +385,11 @@ const view = {
             this.hideDOMElement(toggleAllItemsButton)
         }
 
-        const createItemButton = document.querySelector('#create-items-button')
-        const createItemInput = document.querySelector('#create-items-input')
+        // show + button when creating a new item
+        const createItemButton = document.querySelector('#create-item-button')
+        const createInputElement = document.getElementById('create-item-input')
 
-        if (createItemInput.value) {
+        if (createInputElement.value) {
             this.displayDOMElement(createItemButton)
         } else{
             this.hideDOMElement(createItemButton)
