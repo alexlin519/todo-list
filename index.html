@@ -10,6 +10,51 @@
 
 <body>
     <!-- Import JavaScript. -->
+    <div class = "app-container">
+        <div class = 'title-div'>
+            <span class ='title'>
+                <a href="#">
+                    Todo List
+                </a>
+
+            </span>
+            <span class="author">
+                <a href="https://个人网站">
+                    &nbsp; Alex Lin personal Web &nbsp;
+
+                </a>
+            </span>
+
+        </div>
+        <div class="content-div">
+            <div class="create-item-div">
+                <!-- class定样式  type 定类型
+                    onclick 是一个js event handler函数,在click CheckBox后有反应  onkeyup 同理
+                    placeholder 属性 是 input独有的, 在未输入时 显示的文本
+                -->
+                <input id = 'toggle-all-items-button' class="hide" type="checkbox" onclick="">
+
+                <form id="create-item-form">
+                    <input id="create-item-input" type="text" placeholder="Add a new item" onkeyup =''>
+                </form>
+
+                <button class="x-button" onclick="">
+                    X
+                </button>
+                <button id="create-item-button" onclick="" class="hide">
+                    +
+                </button>
+
+            </div>
+
+            <div class="item-list-div">
+                <br>
+                <ul></ul>
+            </div>
+
+        </div>
+        <a id="delete-all-button" onclick=""> Delete all</a>
+    </div>
     <script src="./script.js"></script>
 </body>
 
