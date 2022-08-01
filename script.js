@@ -379,10 +379,10 @@ const view = {
         //const toggleAllItemsButton = document.getElementById('toggle-all-items-button')
         const toggleAllItemsButton = document.querySelector('#toggle-all-items-button')
         if (model.countItems().numItems>0) {
-            this.displayDOMElement(toggleAllItemsButton)
+            view.displayDOMElement(toggleAllItemsButton)
 
         } else {
-            this.hideDOMElement(toggleAllItemsButton)
+            view.hideDOMElement(toggleAllItemsButton)
         }
 
         // show + button when creating a new item
@@ -390,9 +390,9 @@ const view = {
         const createInputElement = document.getElementById('create-item-input')
 
         if (createInputElement.value) {
-            this.displayDOMElement(createItemButton)
+            view.displayDOMElement(createItemButton);
         } else{
-            this.hideDOMElement(createItemButton)
+            view.hideDOMElement(createItemButton);
         }
 
     },

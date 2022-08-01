@@ -29,20 +29,20 @@
                     onclick 是一个js event handler函数,在click CheckBox后有反应  onkeyup 同理
                     placeholder 属性 是 input独有的, 在未输入时 显示的文本
                 -->
-                <input id="toggle-all-items-button" class="hide" type="checkbox" onclick="controller.toggleAllItems()">
+                <input id="toggle-all-items-button" class = 'hide' type="checkbox" onclick="controller.toggleAllItems()">
                 <form id="create-item-form">
 
                     <input id="create-item-input" type="text" placeholder="Add a new item"
                         onkeyup="view.displayTodoItems()">
                 </form>
                 <button class="x-button" onclick="controller.clearForm()">x</button>
-                <button id="create-item-button" class="hide" onclick="controller.createItem()">+</button>
+                <button id="create-item-button" class = 'hide' onclick="controller.createItem()">+</button>
             </div>
             <div class="item-list-div">
                 <br>
                 <ul></ul>
             </div>
-            <a id="delete-all-items-button" onclick="controller.deleteAllItems()">DELETE ALL</a>
+            <a id="delete-all-button" onclick="controller.deleteAllItems()">DELETE ALL</a>
         </div>
     </div>
     <!-- Import JavaScript. -->
