@@ -9,22 +9,19 @@
 </head>
 
 <body>
-    <!-- Import JavaScript. -->
-    <div class = "app-container">
-        <div class = 'title-div'>
-            <span class ='title'>
-                <a href="#">
-                    Todo List
-                </a>
-
-            </span>
-            <span class="author">
-                <a href="https://个人网站">
-                    &nbsp; Alex Lin personal Web &nbsp;
-
-                </a>
-            </span>
-
+    <div class="app-container">
+            <div class="title-div">
+                <span class="title">
+                    <a href="#">
+                        Todo List
+                    </a>
+                </span>
+                <span class="author">
+                    <a href="https://cgao.info">
+                        &nbsp; Chuntong Gao &nbsp;
+                    </a>
+                </span>
+            </div>
         </div>
         <div class="content-div">
             <div class="create-item-div">
@@ -32,29 +29,23 @@
                     onclick 是一个js event handler函数,在click CheckBox后有反应  onkeyup 同理
                     placeholder 属性 是 input独有的, 在未输入时 显示的文本
                 -->
-                <input id = 'toggle-all-items-button' class="hide" type="checkbox" onclick="">
-
+                <input id="toggle-all-items-button" class="hide" type="checkbox" onclick="controller.toggleAllItems()">
                 <form id="create-item-form">
-                    <input id="create-item-input" type="text" placeholder="Add a new item" onkeyup =''>
+
+                    <input id="create-item-input" type="text" placeholder="Add a new item"
+                        onkeyup="view.displayTodoItems()">
                 </form>
-
-                <button class="x-button" onclick="">
-                    X
-                </button>
-                <button id="create-item-button" onclick="" class="hide">
-                    +
-                </button>
-
+                <button class="x-button" onclick="controller.clearForm()">x</button>
+                <button id="create-item-button" class="hide" onclick="controller.createItem()">+</button>
             </div>
-
             <div class="item-list-div">
                 <br>
                 <ul></ul>
             </div>
-
+            <a id="delete-all-items-button" onclick="controller.deleteAllItems()">DELETE ALL</a>
         </div>
-        <a id="delete-all-button" onclick=""> Delete all</a>
     </div>
+    <!-- Import JavaScript. -->
     <script src="./script.js"></script>
 </body>
 

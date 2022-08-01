@@ -121,7 +121,7 @@ const model = {
         const markItemAsUndone =(item) => {item.done = false} ;
         const allItemsDone = (numItems === numDoneItems);
         // ternary operator
-        this.items.forEach(allItemsDone? markItemAsDone:markItemAsUndone);
+        this.items.forEach(allItemsDone? markItemAsUndone:markItemAsDone);
 
     },
 };
@@ -188,7 +188,7 @@ const controller = {
         const updateItemInput = event.target; //know which item we are click on
         const id = updateItemInput.parentNode.getAttribute('id');
         const newName = updateItemInput.value;
-        if (newName.length >0 ) {
+        if (typeof newName === 'string' &&  newName.length >0 ) {
             this.changeItemName(id,newName);
         } else {
             this.deleteItem(id);
@@ -202,7 +202,7 @@ const controller = {
     */
     changeItemName: function(index, name) {
         model.changeItemName(index,name);
-        view.displayDOMElement();
+        view.displayTodoItems();
     },
 
     /**
@@ -211,7 +211,7 @@ const controller = {
     */
     deleteItem: function(index) {
         model.deleteItem(index);
-        view.displayDOMElement();
+        view.displayTodoItems();
     },
     /**
     * Delete all items.
@@ -220,7 +220,7 @@ const controller = {
         const confirmDelete = confirm('this will delete all todo items! continue?');
         if (confirmDelete) {
             model.deleteAllItems();
-            view.displayDOMElement();
+            view.displayTodoItems();
         }
 
     },
