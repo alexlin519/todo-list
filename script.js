@@ -46,7 +46,7 @@ const model = {
         //this.items.array.forEach(forEachItem);
 
         //法二
-        this.items.array.forEach(function (item) {
+        this.items.forEach(function (item) {
             if (item.done === true) {
                 numDoneItems++;
             }
